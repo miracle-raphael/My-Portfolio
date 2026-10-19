@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name =author content="Miracle Raphael">
+        <meta name="descriptuon" content="Building a Portfolio">
+        <title>Porfolio UI Design</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="script.js" defer></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+
+      /* =====================================================
+         FONTS
+         ===================================================== */
+
+      fontFamily: {
+
+        /* YOUR EXISTING FONTS */
+        display: ["Space Grotesk", "sans-serif"],
+        body: ["Inter", "sans-serif"],
+        syne: ["Syne", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        display2: ["DM Sans", "sans-serif"],
+
+
+        /* MODERN / CLEAN */
+        geist: ["Geist", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+        manrope: ["Manrope", "sans-serif"],
+        sora: ["Sora", "sans-serif"],
+        urbanist: ["Urbanist", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        plusJakarta: ["Plus Jakarta Sans", "sans-serif"],
+
+
+        /* HEADLINE / CREATIVE */
+        archivo: ["Archivo", "sans-serif"],
+        montserrat: ["Montserrat", "sans-serif"],
+        raleway: ["Raleway", "sans-serif"],
+        lexend: ["Lexend", "sans-serif"],
+        leagueSpartan: ["League Spartan", "sans-serif"],
+        anton: ["Anton", "sans-serif"],
+        bebas: ["Bebas Neue", "sans-serif"],
+        oswald: ["Oswald", "sans-serif"],
+        barlow: ["Barlow", "sans-serif"],
+        barlowCondensed: ["Barlow Condensed", "sans-serif"],
+
+
+        /* EDITORIAL / ELEGANT */
+        playfair: ["Playfair Display", "serif"],
+        cormorant: ["Cormorant Garamond", "serif"],
+        libreBaskerville: ["Libre Baskerville", "serif"],
+        dmSerif: ["DM Serif Display", "serif"],
+        lora: ["Lora", "serif"],
+
+
+        /* FRIENDLY / SOFT */
+        nunito: ["Nunito", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+        comfortaa: ["Comfortaa", "sans-serif"],
+
+
+        /* TECH / CODE */
+        geistMono: ["Geist Mono", "monospace"],
+        jetbrains: ["JetBrains Mono", "monospace"],
+        firaCode: ["Fira Code", "monospace"],
+        sourceCode: ["Source Code Pro", "monospace"],
+        spaceMono: ["Space Mono", "monospace"],
+        robotoMono: ["Roboto Mono", "monospace"],
+
+
+        /* CLASSIC */
+        roboto: ["Roboto", "sans-serif"],
+        openSans: ["Open Sans", "sans-serif"],
+        workSans: ["Work Sans", "sans-serif"],
+        ubuntu: ["Ubuntu", "sans-serif"],
+      },
+
+
+      /* =====================================================
+         BOX SHADOWS
+         ===================================================== */
+
+      boxShadow: {
+
+        /* YOUR EXISTING SHADOWS */
+        glass: "0 25px 80px rgba(80, 40, 100, .14)",
+        soft: "0 12px 45px rgba(40, 20, 60, .12)",
+
+
+        /* EXTRA SHADOWS */
+        glow:
+          "0 0 30px rgba(99, 59, 255, .25)",
+
+        glowStrong:
+          "0 0 50px rgba(99, 59, 255, .4)",
+
+        card:
+          "0 20px 60px rgba(0, 0, 0, .15)",
+
+        glassStrong:
+          "0 25px 80px rgba(0, 0, 0, .25)",
+
+        innerGlow:
+          "inset 0 1px 1px rgba(255,255,255,.2)",
+
+        glassInset:
+          "inset 0 1px 1px rgba(255,255,255,.25), 0 20px 60px rgba(0,0,0,.15)",
+      },
+
+
+      /* =====================================================
+         ANIMATIONS
+         ===================================================== */
+
+      animation: {
+
+        /* -----------------------------------------------------
+           YOUR EXISTING ANIMATIONS
+           ----------------------------------------------------- */
+
+        float:
+          "float 6s ease-in-out infinite",
+
+        blob:
+          "blob 12s ease-in-out infinite",
+
+        marquee:
+          "marquee 22s linear infinite",
+
+        pulseSoft:
+          "pulseSoft 3s ease-in-out infinite",
+
+        rotate:
+          "rotate 2s ease-in-out",
+
+        slide:
+          "slide 10s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           FADE
+           ----------------------------------------------------- */
+
+        "fade-in":
+          "fadeIn 0.6s ease-out forwards",
+
+        "fade-out":
+          "fadeOut 0.6s ease-in forwards",
+
+        "fade-in-up":
+          "fadeInUp 0.7s ease-out forwards",
+
+        "fade-in-down":
+          "fadeInDown 0.7s ease-out forwards",
+
+        "fade-in-left":
+          "fadeInLeft 0.7s ease-out forwards",
+
+        "fade-in-right":
+          "fadeInRight 0.7s ease-out forwards",
+
+
+        /* -----------------------------------------------------
+           SLIDE
+           ----------------------------------------------------- */
+
+        "slide-up":
+          "slideUp 0.7s ease-out forwards",
+
+        "slide-down":
+          "slideDown 0.7s ease-out forwards",
+
+        "slide-left":
+          "slideLeft 0.7s ease-out forwards",
+
+        "slide-right":
+          "slideRight 0.7s ease-out forwards",
+
+
+        /* -----------------------------------------------------
+           ZOOM
+           ----------------------------------------------------- */
+
+        "zoom-in":
+          "zoomIn 0.6s ease-out forwards",
+
+        "zoom-out":
+          "zoomOut 0.6s ease-out forwards",
+
+        "zoom-in-slow":
+          "zoomIn 1s ease-out forwards",
+
+
+        /* -----------------------------------------------------
+           FLOATING
+           ----------------------------------------------------- */
+
+        "float-slow":
+          "floatSlow 5s ease-in-out infinite",
+
+        "float-fast":
+          "floatFast 2s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           GLOW / PULSE
+           ----------------------------------------------------- */
+
+        glow:
+          "glow 2s ease-in-out infinite",
+
+        heartbeat:
+          "heartbeat 1.5s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           ROTATION
+           ----------------------------------------------------- */
+
+        "spin-slow":
+          "spinSlow 6s linear infinite",
+
+        "spin-slower":
+          "spinSlow 12s linear infinite",
+
+        "spin-reverse":
+          "spinReverse 6s linear infinite",
+
+        "rotate-slow":
+          "rotateSlow 8s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           BOUNCE / MOVEMENT
+           ----------------------------------------------------- */
+
+        "bounce-soft":
+          "bounceSoft 2s ease-in-out infinite",
+
+        wiggle:
+          "wiggle 1s ease-in-out infinite",
+
+        shake:
+          "shake 0.5s ease-in-out",
+
+
+        /* -----------------------------------------------------
+           MARQUEE
+           ----------------------------------------------------- */
+
+        "marquee-reverse":
+          "marqueeReverse 22s linear infinite",
+
+
+        /* -----------------------------------------------------
+           BACKGROUND
+           ----------------------------------------------------- */
+
+        gradient:
+          "gradient 6s ease infinite",
+
+        shimmer:
+          "shimmer 2s linear infinite",
+
+
+        /* -----------------------------------------------------
+           EXTRA BLOBS
+           ----------------------------------------------------- */
+
+        "blob-slow":
+          "blobSlow 18s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           TEXT / UI
+           ----------------------------------------------------- */
+
+        blink:
+          "blink 1s step-end infinite",
+
+        typing:
+          "typing 3s steps(30, end) forwards",
+
+        reveal:
+          "reveal 1s ease-out forwards",
+
+        loading:
+          "loading 1.5s ease-in-out infinite",
+
+
+        /* -----------------------------------------------------
+           NEW MODERN EFFECTS
+           ----------------------------------------------------- */
+
+        "float-diagonal":
+          "floatDiagonal 5s ease-in-out infinite",
+
+        "swing":
+          "swing 3s ease-in-out infinite",
+
+        "tilt":
+          "tilt 4s ease-in-out infinite",
+
+        "breathe":
+          "breathe 4s ease-in-out infinite",
+
+        "orbit":
+          "orbit 8s linear infinite",
+
+        "orbit-reverse":
+          "orbitReverse 8s linear infinite",
+
+        "shine":
+          "shine 2.5s linear infinite",
+
+        "text-glow":
+          "textGlow 2s ease-in-out infinite",
+
+        "scale-pulse":
+          "scalePulse 2s ease-in-out infinite",
+
+        "border-pulse":
+          "borderPulse 2s ease-in-out infinite",
+
+        "drop-in":
+          "dropIn 0.8s cubic-bezier(.16,1,.3,1) forwards",
+
+        "flip-in":
+          "flipIn 0.8s ease-out forwards",
+
+        "rotate-in":
+          "rotateIn 0.8s ease-out forwards",
+
+        "elastic":
+          "elastic 1s cubic-bezier(.68,-0.55,.27,1.55) forwards",
+      },
+
+
+      /* =====================================================
+         KEYFRAMES
+         ===================================================== */
+
+      keyframes: {
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL FLOAT
+           ----------------------------------------------------- */
+
+        float: {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-12px)"
+          },
+        },
+
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL BLOB
+           ----------------------------------------------------- */
+
+        blob: {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)"
+          },
+          "33%": {
+            transform: "translate(25px, -30px) scale(1.08)"
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(.94)"
+          },
+        },
+
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL MARQUEE
+           ----------------------------------------------------- */
+
+        marquee: {
+          "0%": {
+            transform: "translateX(0)"
+          },
+          "100%": {
+            transform: "translateX(-50%)"
+          },
+        },
+
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL PULSE
+           ----------------------------------------------------- */
+
+        pulseSoft: {
+          "0%, 100%": {
+            opacity: ".45"
+          },
+          "50%": {
+            opacity: "1"
+          },
+        },
+
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL ROTATE
+           ----------------------------------------------------- */
+
+        rotate: {
+          "0%": {
+            transform: "rotate(0deg)"
+          },
+          "100%": {
+            transform: "rotate(360deg)"
+          },
+        },
+
+
+        /* -----------------------------------------------------
+           YOUR ORIGINAL SLIDE
+           ----------------------------------------------------- */
+
+        slide: {
+          "0%, 100%": {
+            transform: "translateX(0)"
+          },
+          "50%": {
+            transform: "translateX(500px)"
+          },
+        },
+
+
+        /* =====================================================
+           FADE ANIMATIONS
+           ===================================================== */
+
+        fadeIn: {
+          "0%": {
+            opacity: "0"
+          },
+          "100%": {
+            opacity: "1"
+          },
+        },
+
+        fadeOut: {
+          "0%": {
+            opacity: "1"
+          },
+          "100%": {
+            opacity: "0"
+          },
+        },
+
+        fadeInUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+        },
+
+        fadeInDown: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)"
+          },
+        },
+
+        fadeInLeft: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(-30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          },
+        },
+
+        fadeInRight: {
+          "0%": {
+            opacity: "0",
+            transform: "translateX(30px)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0)"
+          },
+        },
+
+
+        /* =====================================================
+           SLIDE ANIMATIONS
+           ===================================================== */
+
+        slideUp: {
+          "0%": {
+            transform: "translateY(100%)"
+          },
+          "100%": {
+            transform: "translateY(0)"
+          },
+        },
+
+        slideDown: {
+          "0%": {
+            transform: "translateY(-100%)"
+          },
+          "100%": {
+            transform: "translateY(0)"
+          },
+        },
+
+        slideLeft: {
+          "0%": {
+            transform: "translateX(100%)"
+          },
+          "100%": {
+            transform: "translateX(0)"
+          },
+        },
+
+        slideRight: {
+          "0%": {
+            transform: "translateX(-100%)"
+          },
+          "100%": {
+            transform: "translateX(0)"
+          },
+        },
+
+
+        /* =====================================================
+           ZOOM
+           ===================================================== */
+
+        zoomIn: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(.8)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+        },
+
+        zoomOut: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(1.2)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+        },
+
+
+        /* =====================================================
+           EXTRA FLOAT
+           ===================================================== */
+
+        floatSlow: {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-15px)"
+          },
+        },
+
+        floatFast: {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-8px)"
+          },
+        },
+
+
+        /* =====================================================
+           GLOW
+           ===================================================== */
+
+        glow: {
+          "0%, 100%": {
+            filter:
+              "drop-shadow(0 0 5px rgba(99,59,255,.3))"
+          },
+          "50%": {
+            filter:
+              "drop-shadow(0 0 20px rgba(99,59,255,.8))"
+          },
+        },
+
+
+        /* =====================================================
+           HEARTBEAT
+           ===================================================== */
+
+        heartbeat: {
+          "0%, 100%": {
+            transform: "scale(1)"
+          },
+          "15%": {
+            transform: "scale(1.08)"
+          },
+          "30%": {
+            transform: "scale(1)"
+          },
+          "45%": {
+            transform: "scale(1.05)"
+          },
+        },
+
+
+        /* =====================================================
+           SPIN
+           ===================================================== */
+
+        spinSlow: {
+          from: {
+            transform: "rotate(0deg)"
+          },
+          to: {
+            transform: "rotate(360deg)"
+          },
+        },
+
+        spinReverse: {
+          from: {
+            transform: "rotate(360deg)"
+          },
+          to: {
+            transform: "rotate(0deg)"
+          },
+        },
+
+
+        /* =====================================================
+           SLOW ROTATE
+           ===================================================== */
+
+        rotateSlow: {
+          "0%, 100%": {
+            transform: "rotate(-5deg)"
+          },
+          "50%": {
+            transform: "rotate(5deg)"
+          },
+        },
+
+
+        /* =====================================================
+           BOUNCE
+           ===================================================== */
+
+        bounceSoft: {
+          "0%, 100%": {
+            transform: "translateY(0)"
+          },
+          "50%": {
+            transform: "translateY(-10px)"
+          },
+        },
+
+
+        /* =====================================================
+           WIGGLE
+           ===================================================== */
+
+        wiggle: {
+          "0%, 100%": {
+            transform: "rotate(-3deg)"
+          },
+          "50%": {
+            transform: "rotate(3deg)"
+          },
+        },
+
+
+        /* =====================================================
+           SHAKE
+           ===================================================== */
+
+        shake: {
+          "0%, 100%": {
+            transform: "translateX(0)"
+          },
+          "25%": {
+            transform: "translateX(-5px)"
+          },
+          "75%": {
+            transform: "translateX(5px)"
+          },
+        },
+
+
+        /* =====================================================
+           MARQUEE REVERSE
+           ===================================================== */
+
+        marqueeReverse: {
+          "0%": {
+            transform: "translateX(-50%)"
+          },
+          "100%": {
+            transform: "translateX(0)"
+          },
+        },
+
+
+        /* =====================================================
+           GRADIENT
+           ===================================================== */
+
+        gradient: {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%"
+          },
+          "50%": {
+            backgroundPosition: "100% 50%"
+          },
+        },
+
+
+        /* =====================================================
+           SHIMMER
+           ===================================================== */
+
+        shimmer: {
+          "0%": {
+            backgroundPosition: "-1000px 0"
+          },
+          "100%": {
+            backgroundPosition: "1000px 0"
+          },
+        },
+
+
+        /* =====================================================
+           SLOW BLOB
+           ===================================================== */
+
+        blobSlow: {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)"
+          },
+          "33%": {
+            transform: "translate(40px, -50px) scale(1.12)"
+          },
+          "66%": {
+            transform: "translate(-30px, 30px) scale(.9)"
+          },
+        },
+
+
+        /* =====================================================
+           BLINK
+           ===================================================== */
+
+        blink: {
+          "50%": {
+            opacity: "0"
+          },
+        },
+
+
+        /* =====================================================
+           TYPING
+           ===================================================== */
+
+        typing: {
+          from: {
+            width: "0"
+          },
+          to: {
+            width: "100%"
+          },
+        },
+
+
+        /* =====================================================
+           REVEAL
+           ===================================================== */
+
+        reveal: {
+          "0%": {
+            opacity: "0",
+            clipPath: "inset(0 100% 0 0)"
+          },
+          "100%": {
+            opacity: "1",
+            clipPath: "inset(0 0 0 0)"
+          },
+        },
+
+
+        /* =====================================================
+           LOADING
+           ===================================================== */
+
+        loading: {
+          "0%, 100%": {
+            transform: "scaleX(.3)"
+          },
+          "50%": {
+            transform: "scaleX(1)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: DIAGONAL FLOAT
+           ===================================================== */
+
+        floatDiagonal: {
+          "0%, 100%": {
+            transform: "translate(0, 0)"
+          },
+          "50%": {
+            transform: "translate(12px, -15px)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: SWING
+           ===================================================== */
+
+        swing: {
+          "0%, 100%": {
+            transform: "rotate(-4deg)"
+          },
+          "50%": {
+            transform: "rotate(4deg)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: TILT
+           ===================================================== */
+
+        tilt: {
+          "0%, 100%": {
+            transform: "rotate(0deg)"
+          },
+          "25%": {
+            transform: "rotate(2deg)"
+          },
+          "75%": {
+            transform: "rotate(-2deg)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: BREATHE
+           ===================================================== */
+
+        breathe: {
+          "0%, 100%": {
+            transform: "scale(1)",
+            opacity: ".8"
+          },
+          "50%": {
+            transform: "scale(1.05)",
+            opacity: "1"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: ORBIT
+           ===================================================== */
+
+        orbit: {
+          from: {
+            transform: "rotate(0deg) translateX(30px) rotate(0deg)"
+          },
+          to: {
+            transform: "rotate(360deg) translateX(30px) rotate(-360deg)"
+          },
+        },
+
+        orbitReverse: {
+          from: {
+            transform: "rotate(360deg) translateX(30px) rotate(-360deg)"
+          },
+          to: {
+            transform: "rotate(0deg) translateX(30px) rotate(0deg)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: SHINE
+           ===================================================== */
+
+        shine: {
+          "0%": {
+            transform: "translateX(-100%)"
+          },
+          "100%": {
+            transform: "translateX(100%)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: TEXT GLOW
+           ===================================================== */
+
+        textGlow: {
+          "0%, 100%": {
+            textShadow: "0 0 5px rgba(99,59,255,.2)"
+          },
+          "50%": {
+            textShadow: "0 0 20px rgba(99,59,255,.8)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: SCALE PULSE
+           ===================================================== */
+
+        scalePulse: {
+          "0%, 100%": {
+            transform: "scale(1)"
+          },
+          "50%": {
+            transform: "scale(1.05)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: BORDER PULSE
+           ===================================================== */
+
+        borderPulse: {
+          "0%, 100%": {
+            opacity: ".5"
+          },
+          "50%": {
+            opacity: "1"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: DROP IN
+           ===================================================== */
+
+        dropIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-40px) scale(.95)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: FLIP IN
+           ===================================================== */
+
+        flipIn: {
+          "0%": {
+            opacity: "0",
+            transform: "perspective(400px) rotateX(90deg)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "perspective(400px) rotateX(0)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: ROTATE IN
+           ===================================================== */
+
+        rotateIn: {
+          "0%": {
+            opacity: "0",
+            transform: "rotate(-15deg) scale(.8)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "rotate(0) scale(1)"
+          },
+        },
+
+
+        /* =====================================================
+           NEW: ELASTIC
+           ===================================================== */
+
+        elastic: {
+          "0%": {
+            opacity: "0",
+            transform: "scale(.3)"
+          },
+          "60%": {
+            opacity: "1",
+            transform: "scale(1.1)"
+          },
+          "80%": {
+            transform: "scale(.95)"
+          },
+          "100%": {
+            transform: "scale(1)"
+          },
+        },
+      },
+    },
+  },
+};
+</script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet">
+    </head>
+
+    <body class="bg-[hsl(216,42%,5%)] text-white relative">
+        <section class="flex p-4  justify-between md:mx-[80px] bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 sticky top-0 z-50">
+            <div>
+<h2 class="uppercase text-xl font-display2 "><span class="text-[#633BFF]">Ut<em class="animate-pulseSoft text-2xl">•</em></span> Ralph</h2>
+
+</div>
+
+
+       <button id="btn" class="md:hidden z-50 absolute -top-4 right-16 mt-8 cursor-pointer items-center text-2xl" aria-label="open menu"> ☰ </button>
+
+
+<nav id="menu" class="hidden flex flex-col px-8 md:flex md:flex-row gap-6 md:gap-16 mt-16 md:mt-0 items-center justify-center font-bold text-lg   cursor-pointer hover:opacity-70">
+  
+      <a href="#about" class="hover:text-[hsl(247,56%,47%)] transition duration-300">About</a>
+      <a href="#projects" class="hover:text-[hsl(247,56%,47%)] transition duration-300">Projects</a>
+    <a href="#skills" class="hover:text-[hsl(247,56%,47%)] transition duration-300">Skills</a>
+    <a href="#contact" class="hover:text-[hsl(247,56%,47%)] transition duration-300">Contact</a>
+ 
+    
+  <div>
+   <a href="#contact" class=" hidden md:block bg-[hsl(247,56%,47%,0.5)] p-2 rounded-[10px] cursor-pointer hover:bg-purple-700/20 active:scale-95 transition duration-300">Lets Talk</a>
+</div>
+
+
+ </nav>  
+
+ </section>
+
+        <main id="box" class="flex justify-center mt-2 items-center md:min-h-screen md:mt-0 animate-slideUp ">
+            <section class="flex flex-col justify-evenly md:items-center  md:flex-row">
+                <div>
+                <div class="p-4 md:p-0 ">
+                    <p class="text-left mb-8 text-[25px] font-display uppercase">Hi, i'm</p>
+                    <h1 class="uppercase md:text-6xl text-4xl font-display  md:px-0  mb-4">Utibe Ralph</h1>
+                    <h2 class="text-4xl text-left">Front-end <span class="text-[#633BFF]">Developer</span> </h2>
+                    <p class="font-body mt-2 text-[16px] text-left">I turn ideas into clean,responsive,<br> and interactive web experiences.</p>
+            </div>
+
+                    <div class="flex flex-row gap-8 px-4 md:px-0 mt-8">
+                        <a href="#skills" class="bg-[hsl(247,56%,47%)] p-4 rounded-[10px] font-body cursor-pointer hover:bg-purple-700/10 active:scale-95 transition duration-300">View My Work</a>
+                        <a href="#contact" class="bg-[hsl(247,56%,47%)] p-4 rounded-[10px] font-body cursor-pointer hover:bg-purple-700/10 active:scale-95 transition duration-300">Contact Me</a>
+                    </div>
+
+                    
+                </div>
+
+                <div class="bg-[radial-gradient(circle_at_40%_35%,#633BFF_0%,#3B2499_20%,transparent_45%),linear-gradient(135deg,#02030B,#080D24,#111735)] max-w-[70%] max-h-[60%] rounded-[40px] m-auto md:m-0 md:rounded-full mt-8 md:max-w-[30%] md:max-h[30%] md:mt-0 shadow-glass animate-float">
+                    <img src="/My Portfolio/image/Miracle 5.png" alt="Profile">
+                </div>
+            
+            </section>
+</main>
+
+ <section class="bg-black/10 border border-white/10 rounded-xl shadow-lg shadow-black/25 overflow-hidden mt-8">
+
+    <div class=" flex gap-[20px] w-max animate-marquee p-4">
+     
+        <div class="flex gap-10">
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Javascript <span class="text-4xl">•</span> </p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Front-end <span class="text-4xl">•</span></p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Responsive Code <span class="text-4xl">•</span></p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Web-developer <span class="text-4xl">•</span></p>
+    </div>
+
+    <!-- Duplicate set -->
+    <div class="flex items-center gap-10">
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Javascript <span class="text-4xl">•</span></p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Front-end <span class="text-4xl">•</span></p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Responsive Code <span class="text-4xl">•</span></p>
+      <p class="uppercase flex gap-8 items-center whitespace-nowrap shrink-0">Web-developer <span class="text-4xl">•</span></p>
+    </div>
+
+</div>
+     </section>
+          
+                
+                <section id="about" class="p-4 text-center">
+                    <h6 class="text-left text-[#633BFF] px-2 mt-4">01 - About</h6>   
+             <div class="flex justify-between flex-col md:flex-row  animate-float">
+                <div>
+                  <h2 class="mt-8  md:text-6xl text-4xl text-left px-8 font-display font-bold">Turning ideas Into Interface</h2>
+                </div>
+
+                <div class="text-body pt-8 md:px-4 px-8 pb-16 md:max-w-[60%] md:min-h-[300px] mt-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl shadow-black/30 text-left text-[18px] shadow-glass rounded-[15px]  leading-[36px]">
+                <p>I'm a front-end developer who enjoys turning creative ideas into functional web experiences.
+                    I build responsive, visually engaging websites with a focus on clean code, good design, and user experience.
+                    Currently growing my skills in JavaScript and modern front-end development while building real projects that challenge me to get better.</p>
+                                 
+             </div>
+
+           </section>
+
+
+
+           <!--PROJECTS-->
+            <section id="projects">
+               <div>
+               <h6 class="text-left px-8 text-[#633BFF] text-[15px]">02 - Project</h6>   
+               </div>
+
+
+         <div class="grid md:grid-cols-2 grid-cols-1 justify-evenly gap-[20px] m-[50px] animate-float relative auto-rows-[300px]">
+
+               <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl shadow-black/30 rounded-[20px] p-20 px-[16px] relative">
+                <h4 class="uppercase absolute top-0 left-2 p-4 mb-4 font-display font-semibold text-2xl">Laugh Lab</h4>
+                 <p class=" md:max-w-[85%] mt-8 text-[16px] font-body">This is my assignment: building a joke generator that fetches jokes from an API.Learning JavaScript, one project at a time.</p>
+                  <a href="https://miracle-raphael.github.io/Joke-Generator/" class="absolute bottom-4 left-8 rounded-md px-4 bg-[#633BFF] font-bold py-1.5 transition hover:bg-gray-200 hover:text-black">View</a>
+               </div>
+
+               <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl shadow-black/30 rounded-[20px] p-16 px-[16px] relative">
+                <h4 class="uppercase absolute top-0 left-2 p-4 font-display font-semibold text-2xl">Gym-Community</h4>
+                 <p class=" md:max-w-[85%] mt-8 text-[16px] font-body">A modern and responsive gym community website built with HTML and CSS, featuring a clean layout designed to motivate users, showcase fitness content, and build a strong community.</p>
+                 <a href="https://miracle-raphael.github.io/Gym-Community/" class="absolute bottom-4 left-8 rounded-md px-4 bg-[#633BFF] font-bold py-1.5 transition hover:bg-gray-200 hover:text-black">View</a>
+               </div>
+
+               
+                <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl shadow-black/30 rounded-[20px] p-20 px-[16px] relative"> 
+                <h4 class="uppercase absolute top-0 left-2 p-4 mb-4 font-display font-semibold text-xl">Testimonials</h4>
+                <a  href="https://miracle-raphael.github.io/Testimonials-Project/" class="absolute bottom-4 left-8 rounded-md px-4 bg-[#633BFF] font-bold py-1.5 transition hover:bg-gray-200 hover:text-black">view</a>
+                 <p class="md:max-w-[85%] mt-8 text-[16px] font-body">A clean and responsive testimonials section built with HTML and CSS, designed to showcase customer feedback in a simple, modern layout.</p>
+               </div>
+
+
+               
+
+               <div class="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-xl shadow-black/30 rounded-[20px] p-20 px-[16px] relative">
+                <h4 class="uppercase absolute top-0 left-2 p-4 font-display font-semibold text-2xl">Clipboard landing-page</h4>
+                 <p class="md:max-w-[70%] mt-8 font-body text-[16px]">A clean and responsive Clipboard landing page built with HTML and CSS, focusing on modern layout, typography, spacing, and responsive design.</p>
+                 <a href="https://miracle-raphael.github.io/Clipboard-Project/" class="absolute bottom-4 left-8 rounded-md px-4 bg-[#633BFF] font-bold py-1.5 transition hover:bg-gray-200 hover:text-black">view</a>
+               </div>
+</div>
+            </section>
+        
+
+            <!---SKILLS-->
+            
+            <section id="skills">
+              <h6 class="text-left px-8 text-[#633BFF] text-[15px]">03 - Skills</h6>   
+                  
+              <h2 class="text-4xl px-16 mt-8 font-display font-bold">Tecnologies I work with</h2>
+              <div class="grid grid-cols-1 md:grid-cols-4 place-items-center p-6 mt-8 shadow-soft">
+
+  <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.15] rounded-3xl shadow-2xl min-h-[200px] rounded-[10px] w-[90%]">
+    <div class="flex justify-between">
+    <i class="devicon-html5-plain colored  p-2 text-2xl"></i>
+    <span class="mr-4 text-4xl text-[#E34F26]">↗</span>
+    </div>
+    <p class="mt-16 p-4 text-white font-display font-semibold">HTML</p>
+    <p class="p-4 font-body text-white">Creating clean, semantic, and well-structured web pages with a focus on responsive layouts and accessibility.</p>
+  </div>
+
+   <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.15] mt-6 md:mt-0 rounded-3xl shadow-2xl min-h-[200px] rounded-[10px] w-[90%]">
+    <div class="flex justify-between">
+    <i class="devicon-css3-plain colored p-2 text-2xl"></i>
+    <span class="mr-4 text-4xl text-[#1572B6]">↗</span>
+    </div>
+    <p class="mt-16 p-4 text-white font-display font-semibold"> CSS3</p>
+    <p class="p-4 font-body text-white">Creating responsive and visually engaging designs with a focus on layouts, styling, and animations.</p>
+  </div>
+
+   <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.15] mt-6 md:mt-0 rounded-3xl shadow-2xl min-h-[200px] rounded-[10px] w-[90%]">
+    <div class="flex justify-between">
+    <i class="devicon-javascript-plain colored p-2 text-2xl"></i>
+    <span class="mr-4 text-4xl text-[#F7DF1E]">↗</span>
+    </div>
+    <p class="mt-16 p-4 text-white font-display font-semibold">JAVASCRIPT</p>
+    <p class="p-4 font-body text-white">Building interactive web experiences with a focus on functionality, logic, and dynamic content.</p>
+  </div>
+
+
+  <div class="bg-white/[0.06] backdrop-blur-2xl border border-white/[0.15] mt-6 md:mt-0 rounded-3xl shadow-2xl  min-h-[200px] rounded-[10px] w-[90%]">
+    <div class="flex justify-between">
+    <i class="devicon-tailwindcss-plain colored p-2 text-2xl"></i>
+    <span class="mr-4 text-4xl text-[#06B6D4]">↗</span>
+    </div>
+    <p class="mt-16 p-4 text-white font-display font-semibold">Tailwind CSS</p>
+    <p class="p-4 font-body text-white">Building responsive and modern interfaces with a focus on clean utility-based styling and consistent design.</p>
+  </div>
+
+  </div>
+            </section>
+
+            <!----CONTACT-->
+
+            <section id="contact">
+              <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-lg m-4 p-6 w-[90%] md:m-24 mb-4  md:w-[80%] min-h-[400px]  z-100 shadow-glass">
+                <div class="bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 p-5 min-h-[400px]  shadow-soft relative">
+               <h1 class="uppercase md:text-8xl font-bold font-display text-2xl text-center text-white/20  mb-8 md:mb-0 z-10">CONTACT ME</h1>
+
+               <div class="flex flex-col md:flex-row justify-evenly items-center min-h-[300px]">
+              
+
+               <div>
+                <h2 class="uppercase font-display font-bold text-center mb-4">Email Me</h2>
+
+                <div>
+                  <a href="mailto:miracleraphael@gmail.com" class=" hover:opacity-70 font-body inline-block font-bold text-center mb-8 bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 p-4">miracleraphael2005@gmail.com</a>
+              </div>
+
+                <h2 class="uppercase font-display font-bold text-center">Socials</h2>
+
+                <div class="flex items-center justify-center gap-8 mt-8">
+        <a href="https://x.com/miracle_ra82395" class="text-2xl hover:opacity-70">
+         <i class="fa-brands fa-x-twitter"></i>
+        </a>
+
+      <a href="https://www.tiktok.com/@codewithut?is_from_webapp=1&sender_device=pc" class="text-2xl hover:opacity-70">
+      <i class="fa-brands fa-tiktok"></i>
+     </a>
+
+     <a href="www.linkedin.com/in/utibe-raphael-7375252b5" class="text-2xl hover:opacity-70">
+      <i class="fa-brands fa-linkedin-in"></i>
+     </a>
+    
+</div>
+</div>
+     
+     <form id="contactForm" class="flex flex-col gap-4 mt-8">
+      <input id="name" type="text" name="name" id="name" placeholder="Your Name" class="p-4 bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 font-body w-[]">
+      <input id="email" type="email" placeholder="Your Email" class="p-4 bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 font-body">
+      <textarea id="message" name="message" id="message" cols="30" rows="10" placeholder="Your Message" class="p-2 bg-black/10 border border-white/10 rounded-2xl shadow-lg shadow-black/25 font-body"></textarea>
+     
+
+     <button type="submit" class=" md:fixed md:bottom-4 md:right-8 md:mb-6 mx-auto cursor-pointer p-2  rounded-xl bg-[hsl(247,56%,47%)] text-white font-semibold hover:bg-purple-700 active:scale-95 transition duration-300">Send Message</button>
+
+     <p id="formMessage"></p>
+     </form>
+    </div>
+    
+        </div>
+      </section>
+    </body>
+</html>
